@@ -41,27 +41,20 @@ Chosen 2026-10-09 because the DNS stays at Strato: Cloudflare Pages can only ser
 5. Wait until GitHub's DNS check is green (minutes to a day), then tick **Enforce HTTPS**. `www.desilon.nl` then forwards to `desilon.nl` by itself.
 6. Optional, visit counts without cookies: Cloudflare dashboard → Web Analytics → add `desilon.nl` (works without Cloudflare DNS) → paste the snippet it gives just before `</body>` in each page in `public/`. The security policy in the pages already allows it.
 
-## Connect the form (Zoho Campaigns)
+## Connect the form (MailerLite)
 
-The page has one sign-up form, `#hero-signup` in the hero (email only; the source is a hidden field). Until it's connected it shows "Sign-ups open in a few days" and send nothing.
+Chosen 2026-10-10 (Zoho Campaigns kept sending its own default confirmation mail). Zoho Mail stays for normal mail.
 
-1. Zoho Campaigns (EU account, zoho.eu) → Contacts → create the list **Evade testers**. Add a custom contact field **Source** (single line).
-2. Sign-up forms → create a form for that list with the fields Email and Source (hidden). Settings:
-   - **Double opt-in** on, with a short confirmation mail in our voice.
-   - Redirect after sign-up: `https://desilon.nl/thanks`
-   - Redirect after confirmation: `https://desilon.nl/confirmed`
-3. Get the **embed / HTML code**. From it, copy into the form in `public/index.html`:
-   - the form's `action` URL (replace `action="#"`);
-   - all `<input type="hidden">` fields;
-   - the field names Zoho uses: `CONTACT_EMAIL`, and the source in `LASTNAME` (Zoho's quick form takes no custom fields, so the source shows as "Last Name" in the list; never use the last name in mails). `site.js` fills it from `/tt`, `/ig`, `/yt`.
-   Don't copy Zoho's own CSS or scripts; our styling stays. Consent is the line under the button plus the confirmation mail (double opt-in); there is no checkbox.
-4. Set `data-connected="true"` on the form.
-5. If the action URL is on another domain than `*.zoho.eu`, `*.zohopublic.eu` or `*.maillist-manage.eu`, add it to `form-action` in the `Content-Security-Policy` meta tag at the top of each page in `public/`.
-6. Test: sign up from `desilon.nl/tt`, confirm the mail, check the contact in the list with Source = TikTok.
+- The page has one sign-up form, `#hero-signup`. It posts to MailerLite's form endpoint (`assets.mailerlite.com/jsonp/<account>/forms/<form id>/subscribe`) with `fields[email]`, `fields[found_via]` (the source, filled by `site.js` from `/tt`, `/ig`, `/yt`), `ml-submit=1` and `anticsrf=true`.
+- `site.js` sends it with `fetch` and reads the JSON answer: `{"success": true}` goes to `/thanks`; an email error or an outage shows a short message under the form. MailerLite's own script and styles aren't used.
+- MailerLite settings: group "Evade testers"; text field `found_via` (the name `source` is reserved), and it must be in the form or MailerLite ignores it; double opt-in on, with our two-line confirmation mail; after confirming, redirect to `https://desilon.nl/confirmed`.
+- DNS at Strato: DKIM CNAME `litesrv._domainkey` → `litesrv._domainkey.mlsend.com`, the `mailerlite-domain-verification` TXT, and `include:_spf.mlsend.com` in the one SPF record (next to `include:zohomail.eu`).
+- If the form id changes, copy the new `action` URL from MailerLite's embed code into `public/index.html`. The security policy in each page allows `https://assets.mailerlite.com` (`connect-src`, `form-action`).
+- Test: sign up from `desilon.nl/tt`, confirm the mail, check the subscriber in the group with found_via = TikTok.
 
 ## Privacy page
 
-`public/privacy.html` names the owner as the controller (filled in 2026-10-09; the AVG needs a name, and email counts as the contact detail, so no address). Once the VOF is registered, the controller becomes the VOF: its name, KvK number and business address replace the personal name. Check in Zoho that the account is in the EU data centre, and sign the data processing agreements of Zoho, GitHub and (if you use the visit counts) Cloudflare.
+`public/privacy.html` names the owner as the controller (filled in 2026-10-09; the AVG needs a name, and email counts as the contact detail, so no address). Once the VOF is registered, the controller becomes the VOF: its name, KvK number and business address replace the personal name. Check in Zoho that the account is in the EU data centre, and sign the data processing agreements of MailerLite, Zoho, GitHub and Cloudflare.
 
 ## New screenshots
 

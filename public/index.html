@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://*.zoho.eu https://*.zohopublic.eu https://*.maillist-manage.eu; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://assets.mailerlite.com; form-action 'self' https://assets.mailerlite.com; base-uri 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Evade: the submarine game · Desilon</title>
   <meta name="description" content="Desilon is an indie game studio from the Netherlands, developing Evade: the submarine game, a casual survival game in the deep sea. Become a tester.">
@@ -46,27 +46,17 @@
             <span class="subtitle">The submarine game</span>
           </h1>
           <p class="lead">A casual survival game in the deep sea.<span class="lead-more"> <strong>Evade the torpedoes your sonar picks up,</strong> use modules to outplay them, and make them collide.</span></p>
-          <!-- The sign-up form, wired to Zoho Campaigns: see README.md, "Connect the form".
+          <!-- The sign-up form, wired to MailerLite (form "Evade testers"): see README.md, "Connect the form".
                Until data-connected is "true", site.js keeps it from submitting and shows the notice. -->
-          <form class="signup signup--hero" id="hero-signup" method="post" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" data-connected="true" accept-charset="UTF-8">
+          <form class="signup signup--hero" id="hero-signup" method="post" action="https://assets.mailerlite.com/jsonp/2699805/forms/200893463053469116/subscribe" data-connected="true" accept-charset="UTF-8">
             <label class="sr-only" for="hero-email">Email</label>
             <div class="signup-row">
-              <input class="input" id="hero-email" name="CONTACT_EMAIL" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+              <input class="input" id="hero-email" name="fields[email]" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
               <button class="btn btn--primary" type="submit">Become a tester</button>
             </div>
-            <!-- Zoho Campaigns form "Evade testers" (list Evade Testers): ids from its Raw HTML embed, 2026-10-10 -->
-            <input type="hidden" name="submitType" value="optinCustomView">
-            <input type="hidden" name="emailReportId" value="">
-            <input type="hidden" name="formType" value="QuickForm">
-            <input type="hidden" name="zx" value="14af42ebdf">
-            <input type="hidden" name="zcvers" value="2.0">
-            <input type="hidden" name="oldListIds" value="">
-            <input type="hidden" name="mode" value="OptinCreateView">
-            <input type="hidden" name="zcld" value="13110f977b3e6a3e">
-            <input type="hidden" name="zctd" value="">
-            <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
-            <input type="hidden" name="zc_formIx" value="3z7e71d02f3984d7998abc9e224d22b2958a11003a6c6ea098003164d70b008584">
-            <input type="hidden" name="LASTNAME" value="" data-source>   <!-- the source (TikTok, Instagram, YouTube) rides in Zoho's Last Name field: the quick form takes no custom fields -->
+            <input type="hidden" name="fields[found_via]" value="" data-source>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
             <ul class="ticks">
               <li>Plays in your browser, no install</li>
               <li>New builds before anyone else</li>
