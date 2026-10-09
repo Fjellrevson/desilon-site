@@ -349,6 +349,12 @@ h1, h2, h3 { margin: 0; line-height: 1.1; }
 .message { display: grid; gap: var(--sp-4); justify-items: start; padding: var(--sp-6) var(--sp-5); }
 .message .icon { width: 72px; height: 72px; }
 
+/* ---------- phones: a lighter first screen, so the gameplay shows above the fold ---------- */
+@media (max-width: 759px) {
+  .lead-more { display: none; }                 /* the cards below tell the rest */
+  .ticks li + li { display: none; }             /* keep "Plays in your browser, no install" */
+}
+
 /* ---------- wider screens ---------- */
 @media (min-width: 760px) {
   :root { --gutter: 24px; }
