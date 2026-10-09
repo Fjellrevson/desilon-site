@@ -1,0 +1,44 @@
+{
+  "phones": {
+    "shot-menu": {
+      "file": "menu.png",
+      "fallback": "1-menu.png"
+    },
+    "shot-sonar": {
+      "file": "sonar.png",
+      "fallback": "2-lamp-and-sonar.png"
+    }
+  },
+  "cards": {
+    "feat-dark": {
+      "file": "dark.png",
+      "fallback": "2-lamp-and-sonar.png",
+      "box": [
+        80,
+        340,
+        740,
+        1000
+      ]
+    },
+    "feat-module": {
+      "file": "module.png",
+      "fallback": "5-deep-swarm.png",
+      "box": [
+        220,
+        545,
+        780,
+        1105
+      ]
+    },
+    "feat-collide": {
+      "file": "collide.png",
+      "fallback": "3-torpedo-kill.png",
+      "box": [
+        50,
+        510,
+        610,
+        1070
+      ]
+    }
+  }
+}

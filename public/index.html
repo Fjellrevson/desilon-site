@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://*.zoho.eu https://*.zohopublic.eu https://*.maillist-manage.eu; base-uri 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Evade: the submarine game · Desilon</title>
+  <meta name="description" content="Desilon is an indie game studio from the Netherlands, developing Evade: the submarine game, a casual survival game in the deep sea. Become a tester.">
+  <link rel="canonical" href="https://desilon.nl/">
+  <meta name="theme-color" content="#04111e">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://desilon.nl/">
+  <meta property="og:title" content="Evade: the submarine game">
+  <meta property="og:description" content="A casual survival game in the deep sea, by Desilon, an indie game studio from the Netherlands. Become a tester.">
+  <meta property="og:image" content="https://desilon.nl/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-head site-head--over">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Desilon, home">
+        <img src="/assets/img/desilon-mark.svg" alt="" width="36" height="36">
+        <span>Desilon</span>
+      </a>
+      <a class="chip" href="https://www.instagram.com/desilonstudio/">Follow the devlog</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="game-title">
+      <div class="wrap">
+        <div class="hero-text">
+          <p class="eyebrow status">In development · playtests running</p>
+          <h1 class="hero-title" id="game-title">
+            <span class="logo">EVADE</span>
+            <span class="subtitle">The submarine game</span>
+          </h1>
+          <p class="lead">A casual survival game in the deep sea. <strong>Evade the torpedoes your sonar picks up,</strong> use modules to outrun, lure or slow them, and make them collide.</p>
+          <!-- The sign-up form, wired to Zoho Campaigns: see README.md, "Connect the form".
+               Until data-connected is "true", site.js keeps it from submitting and shows the notice. -->
+          <form class="signup signup--hero" id="hero-signup" method="post" action="#" data-connected="false" accept-charset="UTF-8">
+            <label class="sr-only" for="hero-email">Email</label>
+            <div class="signup-row">
+              <input class="input" id="hero-email" name="CONTACT_EMAIL" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+              <button class="btn btn--primary" type="submit">Become a tester</button>
+            </div>
+            <input type="hidden" name="SOURCE" value="" data-source>
+            <ul class="ticks">
+              <li>Plays in your browser, no install</li>
+              <li>New builds before anyone else</li>
+              <li>Only mail when there's something to play</li>
+            </ul>
+            <p class="fineprint">By signing up you agree to emails about Evade playtests and its launch. Unsubscribe any time. <a href="/privacy">Privacy policy</a>.</p>
+            <p class="notice" role="status" hidden>Sign-ups open in a few days. Follow us on TikTok, Instagram or YouTube to hear first.</p>
+          </form>
+        </div>
+        <div class="phones" aria-label="Screens from the Evade prototype">
+          <figure class="phone">
+            <img src="/assets/img/shot-menu-390.webp" srcset="/assets/img/shot-menu-390.webp 390w, /assets/img/shot-menu-780.webp 780w" sizes="250px" width="390" height="800" alt="Evade's menu: the yellow EVADE logo over dark water, with the sub and module rows and a yellow Dive button.">
+          </figure>
+          <figure class="phone">
+            <img src="/assets/img/shot-sonar-390.webp" srcset="/assets/img/shot-sonar-390.webp 390w, /assets/img/shot-sonar-780.webp 780w" sizes="250px" width="390" height="800" alt="A run in Evade: a row of torpedoes streaks past the sub, each one marked by its sonar, while the lamp lights a patch of dark water.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="screentitle" id="how-title">Outplay the torpedoes</h2>
+        </div>
+        <div class="features">
+          <article class="card feature">
+            <img src="/assets/img/feat-dark-320.webp" srcset="/assets/img/feat-dark-320.webp 320w, /assets/img/feat-dark-640.webp 640w" sizes="(min-width: 760px) 340px, 100vw" width="320" height="320" loading="lazy" alt="The Minnow early in a run: a torpedo crosses just ahead of it while sonar marks mines in the dark.">
+            <div class="feature-body">
+              <h3>Dodge in the dark</h3>
+              <p>Your lamp lights a small patch of water. Sonar pings show the rest, for a moment.</p>
+            </div>
+          </article>
+          <article class="card feature">
+            <img src="/assets/img/feat-module-320.webp" srcset="/assets/img/feat-module-320.webp 320w, /assets/img/feat-module-640.webp 640w" sizes="(min-width: 760px) 340px, 100vw" width="320" height="320" loading="lazy" alt="The Ray with the Siren module: two torpedoes close in on its purple lure instead of the sub.">
+            <div class="feature-body">
+              <h3>Fire your module</h3>
+              <p>Survive and take torpedoes down to charge it, then fire: a burst of speed, a lure, heat vision, micro torpedoes or an EMP.</p>
+            </div>
+          </article>
+          <article class="card feature">
+            <img src="/assets/img/feat-collide-320.webp" srcset="/assets/img/feat-collide-320.webp 320w, /assets/img/feat-collide-640.webp 640w" sizes="(min-width: 760px) 340px, 100vw" width="320" height="320" loading="lazy" alt="The Marlin deep down: a torpedo blows up right behind it for 50 points.">
+            <div class="feature-body">
+              <h3>Make them collide</h3>
+              <p>Lure torpedoes into each other or into mines.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" aria-labelledby="studio-title">
+      <div class="wrap studio">
+        <img class="studio-mark" src="/assets/img/desilon-mark.svg" alt="The Desilon mark: a yellow circle with a dark delta" width="88" height="88">
+        <div class="section-head section-head--flush">
+          <h2 class="screentitle" id="studio-title">Desilon</h2>
+          <p>Desilon is an indie game studio from the Netherlands, currently developing Evade: the submarine game, a mobile game about evading torpedoes.</p>
+          <div class="follow">
+            <a class="chip" href="https://www.tiktok.com/@desilonstudio">TikTok <span class="chip__handle">@desilonstudio</span></a>
+            <a class="chip" href="https://www.instagram.com/desilonstudio/">Instagram <span class="chip__handle">@desilonstudio</span></a>
+            <a class="chip" href="https://www.youtube.com/@desilonstudio">YouTube <span class="chip__handle">@desilonstudio</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <p>© 2026 Desilon · Evade is in development; the screens are from the prototype.</p>
+      <nav aria-label="Footer">
+        <a href="mailto:contact@desilon.nl">contact@desilon.nl</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
