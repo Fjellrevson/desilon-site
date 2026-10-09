@@ -48,13 +48,25 @@
           <p class="lead">A casual survival game in the deep sea.<span class="lead-more"> <strong>Evade the torpedoes your sonar picks up,</strong> use modules to outplay them, and make them collide.</span></p>
           <!-- The sign-up form, wired to Zoho Campaigns: see README.md, "Connect the form".
                Until data-connected is "true", site.js keeps it from submitting and shows the notice. -->
-          <form class="signup signup--hero" id="hero-signup" method="post" action="#" data-connected="false" accept-charset="UTF-8">
+          <form class="signup signup--hero" id="hero-signup" method="post" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" data-connected="true" accept-charset="UTF-8">
             <label class="sr-only" for="hero-email">Email</label>
             <div class="signup-row">
               <input class="input" id="hero-email" name="CONTACT_EMAIL" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
               <button class="btn btn--primary" type="submit">Become a tester</button>
             </div>
-            <input type="hidden" name="SOURCE" value="" data-source>
+            <!-- Zoho Campaigns form "Evade testers" (list Evade Testers): ids from its Raw HTML embed, 2026-10-10 -->
+            <input type="hidden" name="submitType" value="optinCustomView">
+            <input type="hidden" name="emailReportId" value="">
+            <input type="hidden" name="formType" value="QuickForm">
+            <input type="hidden" name="zx" value="14af42ebdf">
+            <input type="hidden" name="zcvers" value="2.0">
+            <input type="hidden" name="oldListIds" value="">
+            <input type="hidden" name="mode" value="OptinCreateView">
+            <input type="hidden" name="zcld" value="13110f977b3e6a3e">
+            <input type="hidden" name="zctd" value="">
+            <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+            <input type="hidden" name="zc_formIx" value="3z7e71d02f3984d7998abc9e224d22b2958a11003a6c6ea098003164d70b008584">
+            <input type="hidden" name="LASTNAME" value="" data-source>   <!-- the source (TikTok, Instagram, YouTube) rides in Zoho's Last Name field: the quick form takes no custom fields -->
             <ul class="ticks">
               <li>Plays in your browser, no install</li>
               <li>New builds before anyone else</li>

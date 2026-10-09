@@ -53,7 +53,7 @@ The page has one sign-up form, `#hero-signup` in the hero (email only; the sourc
 3. Get the **embed / HTML code**. From it, copy into the form in `public/index.html`:
    - the form's `action` URL (replace `action="#"`);
    - all `<input type="hidden">` fields;
-   - the field names Zoho uses for email and Source (e.g. `CONTACT_EMAIL`, `CONTACT_CF1`): put them in the `name` attributes (Source is a hidden field that `site.js` fills from `/tt`, `/ig`, `/yt`).
+   - the field names Zoho uses: `CONTACT_EMAIL`, and the source in `LASTNAME` (Zoho's quick form takes no custom fields, so the source shows as "Last Name" in the list; never use the last name in mails). `site.js` fills it from `/tt`, `/ig`, `/yt`.
    Don't copy Zoho's own CSS or scripts; our styling stays. Consent is the line under the button plus the confirmation mail (double opt-in); there is no checkbox.
 4. Set `data-connected="true"` on the form.
 5. If the action URL is on another domain than `*.zoho.eu`, `*.zohopublic.eu` or `*.maillist-manage.eu`, add it to `form-action` in the `Content-Security-Policy` meta tag at the top of each page in `public/`.
